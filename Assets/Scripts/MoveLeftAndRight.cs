@@ -24,7 +24,7 @@ public class MoveLeftAndRight : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)  // When the enemy collides with a wall it will reverse course
     {
-        if (!other.CompareTag("Player") && !other.CompareTag("Finish") && !other.CompareTag("Coin"))
+        if (other.CompareTag("Wall"))
         {
             speed *= -1;
         }

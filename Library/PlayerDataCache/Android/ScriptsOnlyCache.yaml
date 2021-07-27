@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - MoveLeftThenTurn
     - MoveRightAndLeft
     - MoveRightThenTurn
+    - PlayerController
     - SimpleCollectibleScript
     Unity.InputSystem.dll:
     - UnityEngine.InputSystem.InputActionAsset
@@ -57,6 +58,8 @@ ScriptsOnlyBuild:
     - UnityEngine.XR.Interaction.Toolkit.LocomotionSystem
     - UnityEngine.XR.Interaction.Toolkit.TeleportationArea
     - UnityEngine.XR.Interaction.Toolkit.TeleportationProvider
+    - UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster
+    - UnityEngine.XR.Interaction.Toolkit.UI.XRUIInputModule
     - UnityEngine.XR.Interaction.Toolkit.XRInteractionManager
     - UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual
     - UnityEngine.XR.Interaction.Toolkit.XRRayInteractor
@@ -97,7 +100,6 @@ ScriptsOnlyBuild:
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
-    - UnityEngine.EventSystems.StandaloneInputModule
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.ContentSizeFitter
@@ -216,6 +218,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 4924}
     - Class: 114
+      Script: {instanceID: 4938}
+    - Class: 114
       Script: {instanceID: 5234}
     - Class: 114
       Script: {instanceID: 5250}
@@ -252,8 +256,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6300}
     - Class: 114
-      Script: {instanceID: 6358}
-    - Class: 114
       Script: {instanceID: 6368}
     - Class: 114
       Script: {instanceID: 6472}
@@ -266,6 +268,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6780}
     - Class: 114
+      Script: {instanceID: 7282}
+    - Class: 114
       Script: {instanceID: 7408}
     - Class: 114
       Script: {instanceID: 7486}
@@ -273,6 +277,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 7668}
     - Class: 114
       Script: {instanceID: 7710}
+    - Class: 114
+      Script: {instanceID: 7882}
     - Class: 114
       Script: {instanceID: 7948}
     - Class: 114

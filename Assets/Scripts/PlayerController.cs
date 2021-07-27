@@ -29,24 +29,20 @@ public class PlayerController : MonoBehaviour
         fails = 0;
     }
 
-    void Update()   // Player movement controll.
-    {
-        forwardInput = Input.GetAxis("Vertical");
-        transform.Translate(Vector3.forward * Time.deltaTime * speed * forwardInput);   // Moving along the Z axis
+    //void Update()   // Player movement controll.
+    //{
+    //
+    //}
 
-        sidewaysInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * Time.deltaTime * speed * sidewaysInput);    // Moving along the x axis
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))   // When the player collides with an enemy they are sent to the start and fails are incremented
-        {
-            SendToStart();
-            fails += 1;
-            FailsDisplay();
-        }
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Enemy"))   // When the player collides with an enemy they are sent to the start and fails are incremented
+    //    {
+    //        SendToStart();
+    //        fails += 1;
+    //        FailsDisplay();
+    //    }
+    //}
 
     private void OnTriggerEnter(Collider other)
     {
@@ -70,6 +66,13 @@ public class PlayerController : MonoBehaviour
             coinsCollected += 1;
             levelController.CoinsDisplay(coinsCollected);
             Destroy(other.gameObject);
+        }
+
+        else if (other.CompareTag("Enemy"))   // When the player collides with an enemy they are sent to the start and fails are incremented
+        {
+            SendToStart();
+            fails += 1;
+            FailsDisplay();
         }
 
     }
