@@ -54,6 +54,7 @@ ScriptsOnlyBuild:
     - TMPro.TextMeshProUGUI
     Unity.XR.Interaction.Toolkit.dll:
     - UnityEngine.XR.Interaction.Toolkit.ActionBasedController
+    - UnityEngine.XR.Interaction.Toolkit.ActionBasedSnapTurnProvider
     - UnityEngine.XR.Interaction.Toolkit.Inputs.InputActionManager
     - UnityEngine.XR.Interaction.Toolkit.LocomotionSystem
     - UnityEngine.XR.Interaction.Toolkit.TeleportationArea
@@ -153,6 +154,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 114
       Script: {instanceID: 600}
+    - Class: 114
+      Script: {instanceID: 606}
     - Class: 114
       Script: {instanceID: 1700}
     - Class: 114
