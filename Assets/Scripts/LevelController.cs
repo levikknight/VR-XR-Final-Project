@@ -11,15 +11,16 @@ using TMPro;
 public class LevelController : MonoBehaviour
 {
     public static LevelController instance = null;      //This class is a Singleton
-    public TextMeshProUGUI levelDisplay;
-    public TextMeshProUGUI coinsDisplay;
-    public TextMeshProUGUI winDisplay;
+    public TextMeshProUGUI[] levelDisplayList;
+    public TextMeshProUGUI[] coinsDisplayList;
+    public TextMeshProUGUI[] winDisplayList;
 
     private int level;
     private int levelTotalCoins;
     private int testReturn;
     private float startXCordinantes;
     private float startZCordinantes;
+    private bool coinsOverride;
 
             // These Dicts handle all the information need for each level. (How many coins there are as well as the start position for the player.)
     private IDictionary<int, int> gameCoins = new Dictionary<int, int>(){ { 1, 0 }, { 2, 9 }, { 3, 4 } };
@@ -51,7 +52,7 @@ public class LevelController : MonoBehaviour
     {
         level = 0;
         NextLevel();
-        levelDisplay.text = "LEVEL: " + Level;
+        coinsOverride = false;
     }
 
     void Awake()    // Enforces Singleton behavior.
@@ -75,24 +76,49 @@ public class LevelController : MonoBehaviour
             CoinsDisplay(0);
         } else                                          // Else display a victory message.
         {
-            winDisplay.text = "YOU WIN!";
+            WinDisplay();
         }
     }
 
-    private void LevelDisplay() // Updates the UI for the level.
+    public void ResetLevel()    // Returns the Player to level one.  **TODO: Totally reset the world. Respawn all enemies and coins.
     {
-        levelDisplay.text = "LEVEL: " + Level;
+        level = 0;
+        LevelDisplay();
+        coinsOverride = true;
+        CoinsDisplay(gameCoins[level]);
     }
 
-    public void CoinsDisplay(int coinsCollected)    // Updates the UI when coins collected.
+    private void LevelDisplay() // Updates all level UI for the level.
     {
-        if (levelTotalCoins > 0)                    // If coins are required to compleat the level, let the user know.
+        for(int i = 0; i < levelDisplayList.Length; i++)
         {
-            coinsDisplay.text = "COINS: " + coinsCollected + "/" + levelTotalCoins;
+            levelDisplayList[i].text = "LEVEL: " + Level;
+        }
+    }
+
+    public void CoinsDisplay(int coinsCollected)    // Updates all level UI when coins collected.
+    {
+        if (levelTotalCoins > 0 && !coinsOverride)          // If coins are required to compleat the level and coins over ride is not on, let the user know.
+        {
+            for (int i = 0; i < coinsDisplayList.Length; i++)
+            {
+                coinsDisplayList[i].text = "COINS: " + coinsCollected + "/" + levelTotalCoins;
+            }
         } else                                      // If coins are not required, display nothing.
         {
-            coinsDisplay.text = "";
+            for (int i = 0; i < coinsDisplayList.Length; i++)
+            {
+                coinsDisplayList[i].text = "COINS: not required";
+            }
         }
 
+    }
+
+    public void WinDisplay()    // Updates al level UI when the player wins.
+    {
+        for (int i = 0; i < winDisplayList.Length; i++)
+        {
+            winDisplayList[i].text = "YOU WIN!!!";
+        }
     }
 }

@@ -1,13 +1,16 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - EnemyController
     - LevelController
     - MoveLeftAndRight
     - MoveLeftThenTurn
     - MoveRightAndLeft
     - MoveRightThenTurn
+    - OnButtonPress
     - PlayerController
     - SimpleCollectibleScript
+    - ToggleRay
     Unity.InputSystem.dll:
     - UnityEngine.InputSystem.InputActionAsset
     - UnityEngine.InputSystem.InputActionReference
@@ -61,10 +64,13 @@ ScriptsOnlyBuild:
     - UnityEngine.XR.Interaction.Toolkit.TeleportationProvider
     - UnityEngine.XR.Interaction.Toolkit.UI.TrackedDeviceGraphicRaycaster
     - UnityEngine.XR.Interaction.Toolkit.UI.XRUIInputModule
+    - UnityEngine.XR.Interaction.Toolkit.XRDirectInteractor
+    - UnityEngine.XR.Interaction.Toolkit.XRGrabInteractable
     - UnityEngine.XR.Interaction.Toolkit.XRInteractionManager
     - UnityEngine.XR.Interaction.Toolkit.XRInteractorLineVisual
     - UnityEngine.XR.Interaction.Toolkit.XRRayInteractor
     - UnityEngine.XR.Interaction.Toolkit.XRRig
+    - UnityEngine.XR.Interaction.Toolkit.XRSocketInteractor
     Unity.XR.Management.Editor.dll:
     - UnityEditor.XR.Management.XRGeneralSettingsPerBuildTarget
     Unity.XR.Management.dll:
@@ -193,6 +199,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3532}
     - Class: 114
+      Script: {instanceID: 3558}
+    - Class: 114
       Script: {instanceID: 3574}
     - Class: 114
       Script: {instanceID: 3694}
@@ -251,6 +259,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6096}
     - Class: 114
+      Script: {instanceID: 6184}
+    - Class: 114
       Script: {instanceID: 6206}
     - Class: 114
       Script: {instanceID: 6246}
@@ -271,6 +281,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 6780}
     - Class: 114
+      Script: {instanceID: 6934}
+    - Class: 114
       Script: {instanceID: 7282}
     - Class: 114
       Script: {instanceID: 7408}
@@ -286,6 +298,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 7948}
     - Class: 114
       Script: {instanceID: 8054}
+    - Class: 114
+      Script: {instanceID: 24144}
+    - Class: 114
+      Script: {instanceID: 24168}
+    - Class: 114
+      Script: {instanceID: 49396}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -775,7 +793,7 @@ ScriptsOnlyBuild:
     className: TeleportationProvider
   - hash:
       serializedVersion: 2
-      Hash: c393d35544ab0665179a7b0ea8d909ca
+      Hash: fe384c56c22f62f67e6aaeadd94ceb82
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelController
@@ -1519,7 +1537,7 @@ ScriptsOnlyBuild:
     className: OculusTouchControllerProfile
   - hash:
       serializedVersion: 2
-      Hash: 4076dab3db4c714fcdec6156d8d0b727
+      Hash: ac75894a8ca9859cc71da9ce61e5b85e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -1673,6 +1691,24 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: 69ee82392d9d035ded7f90b57a8f8ab3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OnButtonPress
+  - hash:
+      serializedVersion: 2
+      Hash: 3644c120759ed908a061c45af3a617da
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ToggleRay
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: EnemyController
   platform: 13
   scenePathNames:
   - Assets/Scenes/WorldsHardestGame.unity

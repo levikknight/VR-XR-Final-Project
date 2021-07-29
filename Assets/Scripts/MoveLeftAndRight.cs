@@ -1,6 +1,6 @@
 ﻿//  Levi Knight
-//  07-09-2021
-//  MidTerm Project
+//  07-28-2021
+//  Final Project
 //  "Worlds Hardest Game in 3D"
 
 using System.Collections;

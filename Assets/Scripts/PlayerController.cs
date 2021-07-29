@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody playerRb;
     private LevelController levelController;
-    public TextMeshProUGUI failsUI;
+    public TextMeshProUGUI[] failsDisplayList;
 
     private float forwardInput;
     private float sidewaysInput;
@@ -27,22 +27,15 @@ public class PlayerController : MonoBehaviour
         levelController = GameObject.Find("LevelController").GetComponent<LevelController>();
         coinsCollected = 0;
         fails = 0;
+        FailsDisplay();
     }
 
-    //void Update()   // Player movement controll.
-    //{
-    //
-    //}
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Enemy"))   // When the player collides with an enemy they are sent to the start and fails are incremented
-    //    {
-    //        SendToStart();
-    //        fails += 1;
-    //        FailsDisplay();
-    //    }
-    //}
+    public void RestartLevel()
+    {
+        SendToStart();
+        fails = 0;
+        FailsDisplay();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -84,6 +77,10 @@ public class PlayerController : MonoBehaviour
 
     private void FailsDisplay()     // Updates the Fails UI.
     {
-        failsUI.text = "FAILS: " + fails;
+        for (int i = 0; i < failsDisplayList.Length; i++)
+        {
+            failsDisplayList[i].text = "FAILS: " + fails;
+        }
+        
     }
 }
