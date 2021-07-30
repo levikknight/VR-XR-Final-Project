@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class MoveRightThenTurn : MonoBehaviour
 {
-    private float speed = 8.0f;
+    private float speed = 6.0f;
     bool turn = true;
     bool revers = true;
     Vector3 move;
@@ -26,7 +26,7 @@ public class MoveRightThenTurn : MonoBehaviour
         transform.Translate(move * Time.deltaTime * speed);  // Moves at a constant speed
     }
 
-    private void OnTriggerEnter(Collider other)  // When the enemy collides with a wall it will reverse course
+    private void OnTriggerEnter(Collider other)  // When the enemy collides with a wall it will call these two functions and ultimatly turn right.
     {
         if (other.CompareTag("EnemyDirector"))
         {
@@ -35,7 +35,7 @@ public class MoveRightThenTurn : MonoBehaviour
         }
     }
 
-    private void FlipSpeed()
+    private void FlipSpeed()        // inverse speed everyother time the function is called.
     {
         if (revers)
         {
@@ -47,7 +47,7 @@ public class MoveRightThenTurn : MonoBehaviour
         }
     }
 
-    private void FlipDirection()
+    private void FlipDirection()        // Change the direction of travel everyother time the function is called.
     {
         if (turn)
         {

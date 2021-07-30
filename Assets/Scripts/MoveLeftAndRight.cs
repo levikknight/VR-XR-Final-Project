@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class MoveLeftAndRight : MonoBehaviour
 {
-    private float speed = -8f;
+    private float speed = -6f;
     Rigidbody enemyRb;
 
     void Start()
