@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
 {
     private int health;
     Rigidbody enemyRb;
+    private PlayQuickSound playQuickSound;
 
     public int Health
     {
@@ -22,6 +23,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         enemyRb = GetComponent<Rigidbody>();
+        playQuickSound = GetComponent<PlayQuickSound>();
         health = 5;
     }
 
@@ -29,5 +31,13 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Wall"))
+        {
+            playQuickSound.Play();
+        }
     }
 }

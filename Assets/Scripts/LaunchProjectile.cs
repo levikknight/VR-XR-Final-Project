@@ -13,9 +13,11 @@ public class LaunchProjectile : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Fire()
     {
-        
+        //Debug.Log("BIG KABOOM AND SMASH!");
+        GameObject bullet = Instantiate(projectile, transform.position, transform.rotation);
+
+        bullet.GetComponent<Rigidbody>().AddRelativeForce(new Vector3(0, launchVelocity, 0));
     }
 }

@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - EnemyController
     - FadeCanvas
+    - LaunchProjectile
     - LevelController
     - MoveLeftAndRight
     - MoveLeftThenTurn
@@ -10,6 +11,7 @@ ScriptsOnlyBuild:
     - MoveRightThenTurn
     - OnButtonPress
     - OnSceneLoad
+    - PlayQuickSound
     - PlayerController
     - SimpleCollectibleScript
     - TeleportAreaWithFade
@@ -155,6 +157,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 82
       Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 104
@@ -180,139 +184,143 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2002}
     - Class: 114
-      Script: {instanceID: 2132}
+      Script: {instanceID: 2040}
     - Class: 114
-      Script: {instanceID: 2278}
+      Script: {instanceID: 2134}
     - Class: 114
-      Script: {instanceID: 2450}
+      Script: {instanceID: 2280}
     - Class: 114
-      Script: {instanceID: 2548}
+      Script: {instanceID: 2452}
     - Class: 114
-      Script: {instanceID: 2608}
+      Script: {instanceID: 2550}
     - Class: 114
-      Script: {instanceID: 2770}
+      Script: {instanceID: 2610}
     - Class: 114
-      Script: {instanceID: 3236}
+      Script: {instanceID: 2772}
     - Class: 114
-      Script: {instanceID: 3372}
+      Script: {instanceID: 3238}
     - Class: 114
-      Script: {instanceID: 3396}
+      Script: {instanceID: 3374}
     - Class: 114
-      Script: {instanceID: 3454}
+      Script: {instanceID: 3398}
     - Class: 114
-      Script: {instanceID: 3532}
+      Script: {instanceID: 3400}
     - Class: 114
-      Script: {instanceID: 3558}
+      Script: {instanceID: 3458}
     - Class: 114
-      Script: {instanceID: 3574}
+      Script: {instanceID: 3536}
     - Class: 114
-      Script: {instanceID: 3694}
+      Script: {instanceID: 3562}
     - Class: 114
-      Script: {instanceID: 3818}
+      Script: {instanceID: 3578}
     - Class: 114
-      Script: {instanceID: 3938}
+      Script: {instanceID: 3698}
     - Class: 114
-      Script: {instanceID: 3956}
+      Script: {instanceID: 3822}
     - Class: 114
-      Script: {instanceID: 4002}
+      Script: {instanceID: 3942}
     - Class: 114
-      Script: {instanceID: 4016}
+      Script: {instanceID: 3960}
     - Class: 114
-      Script: {instanceID: 4134}
+      Script: {instanceID: 4006}
     - Class: 114
-      Script: {instanceID: 4182}
+      Script: {instanceID: 4020}
     - Class: 114
-      Script: {instanceID: 4262}
+      Script: {instanceID: 4138}
     - Class: 114
-      Script: {instanceID: 4282}
+      Script: {instanceID: 4186}
     - Class: 114
-      Script: {instanceID: 4428}
+      Script: {instanceID: 4266}
     - Class: 114
-      Script: {instanceID: 4530}
+      Script: {instanceID: 4286}
     - Class: 114
-      Script: {instanceID: 4614}
+      Script: {instanceID: 4432}
     - Class: 114
-      Script: {instanceID: 4926}
+      Script: {instanceID: 4534}
     - Class: 114
-      Script: {instanceID: 4940}
+      Script: {instanceID: 4618}
     - Class: 114
-      Script: {instanceID: 5236}
+      Script: {instanceID: 4930}
     - Class: 114
-      Script: {instanceID: 5252}
+      Script: {instanceID: 4944}
     - Class: 114
-      Script: {instanceID: 5306}
+      Script: {instanceID: 4964}
     - Class: 114
-      Script: {instanceID: 5316}
+      Script: {instanceID: 5242}
     - Class: 114
-      Script: {instanceID: 5358}
+      Script: {instanceID: 5258}
     - Class: 114
-      Script: {instanceID: 5506}
+      Script: {instanceID: 5312}
     - Class: 114
-      Script: {instanceID: 5508}
+      Script: {instanceID: 5322}
     - Class: 114
-      Script: {instanceID: 5528}
+      Script: {instanceID: 5364}
     - Class: 114
-      Script: {instanceID: 5784}
+      Script: {instanceID: 5512}
     - Class: 114
-      Script: {instanceID: 5786}
+      Script: {instanceID: 5514}
     - Class: 114
-      Script: {instanceID: 5896}
+      Script: {instanceID: 5534}
     - Class: 114
-      Script: {instanceID: 6028}
+      Script: {instanceID: 5790}
     - Class: 114
-      Script: {instanceID: 6036}
+      Script: {instanceID: 5792}
     - Class: 114
-      Script: {instanceID: 6094}
+      Script: {instanceID: 5902}
+    - Class: 114
+      Script: {instanceID: 6034}
+    - Class: 114
+      Script: {instanceID: 6042}
     - Class: 114
       Script: {instanceID: 6100}
     - Class: 114
-      Script: {instanceID: 6188}
+      Script: {instanceID: 6106}
     - Class: 114
-      Script: {instanceID: 6210}
+      Script: {instanceID: 6194}
     - Class: 114
-      Script: {instanceID: 6250}
+      Script: {instanceID: 6216}
     - Class: 114
-      Script: {instanceID: 6294}
+      Script: {instanceID: 6256}
     - Class: 114
-      Script: {instanceID: 6304}
+      Script: {instanceID: 6300}
     - Class: 114
-      Script: {instanceID: 6372}
+      Script: {instanceID: 6310}
     - Class: 114
-      Script: {instanceID: 6428}
+      Script: {instanceID: 6378}
     - Class: 114
-      Script: {instanceID: 6478}
+      Script: {instanceID: 6434}
     - Class: 114
-      Script: {instanceID: 6618}
+      Script: {instanceID: 6484}
     - Class: 114
-      Script: {instanceID: 6736}
+      Script: {instanceID: 6624}
     - Class: 114
-      Script: {instanceID: 6754}
+      Script: {instanceID: 6742}
     - Class: 114
-      Script: {instanceID: 6786}
+      Script: {instanceID: 6760}
     - Class: 114
-      Script: {instanceID: 6940}
+      Script: {instanceID: 6782}
     - Class: 114
-      Script: {instanceID: 7288}
+      Script: {instanceID: 6794}
     - Class: 114
-      Script: {instanceID: 7414}
+      Script: {instanceID: 6948}
     - Class: 114
-      Script: {instanceID: 7492}
+      Script: {instanceID: 7296}
     - Class: 114
-      Script: {instanceID: 7674}
+      Script: {instanceID: 7422}
     - Class: 114
-      Script: {instanceID: 7716}
+      Script: {instanceID: 7500}
     - Class: 114
-      Script: {instanceID: 7888}
+      Script: {instanceID: 7682}
     - Class: 114
-      Script: {instanceID: 7954}
+      Script: {instanceID: 7724}
     - Class: 114
-      Script: {instanceID: 8060}
+      Script: {instanceID: 7896}
     - Class: 114
-      Script: {instanceID: 55098}
+      Script: {instanceID: 7962}
     - Class: 114
-      Script: {instanceID: 55104}
+      Script: {instanceID: 8068}
     - Class: 114
-      Script: {instanceID: 66196}
+      Script: {instanceID: 57974}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -472,6 +480,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.XR.Interaction.Toolkit.dll
     namespaceName: UnityEngine.XR.Interaction.Toolkit
     className: XRInteractorLineVisual
+  - hash:
+      serializedVersion: 2
+      Hash: 04156ad4f539d9ee82c2ea6a11b2e994
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TeleportAreaWithFade
   - hash:
       serializedVersion: 2
       Hash: 9f0d2156cb2876cc856eb040bfe23e76
@@ -688,6 +702,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: ContentSizeFitter
+  - hash:
+      serializedVersion: 2
+      Hash: 99a4424770482ef926b9a2b7b24e5bef
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FadeCanvas
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -1048,6 +1068,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.XR.Interaction.Toolkit.dll
     namespaceName: UnityEngine.XR.Interaction.Toolkit.UI
     className: XRUIInputModule
+  - hash:
+      serializedVersion: 2
+      Hash: cb6f18da2cab4ba25bdf416f51d2913c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: OnSceneLoad
   - hash:
       serializedVersion: 2
       Hash: 24c74cc0d527a06113f2b967042769f0
@@ -1458,6 +1484,12 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
+      Hash: 28ce7e911d9bd994ffa8fd7d1c7b6e10
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LaunchProjectile
+  - hash:
+      serializedVersion: 2
       Hash: 3164bc883ff663a5cdb32d1ef7e7c0c5
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -1722,22 +1754,10 @@ ScriptsOnlyBuild:
     className: TouchInputModule
   - hash:
       serializedVersion: 2
-      Hash: 99a4424770482ef926b9a2b7b24e5bef
+      Hash: 8ef8c77cd90fb75173863254da642a13
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: FadeCanvas
-  - hash:
-      serializedVersion: 2
-      Hash: cb6f18da2cab4ba25bdf416f51d2913c
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: OnSceneLoad
-  - hash:
-      serializedVersion: 2
-      Hash: 04156ad4f539d9ee82c2ea6a11b2e994
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: TeleportAreaWithFade
+    className: PlayQuickSound
   platform: 13
   scenePathNames:
   - Assets/Scenes/WorldsHardestGame.unity
