@@ -51,7 +51,7 @@ public class LevelController : MonoBehaviour
     void Start()    // Simple Initilization.
     {
         level = 0;
-        NextLevel();
+        NextLevel(0);
         coinsOverride = false;
     }
 
@@ -63,29 +63,43 @@ public class LevelController : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void NextLevel()     // Called when the end of the level is reached. 
+    public bool NextLevel(int coinsCollected)     // Called when the end of the level is reached as well as at the beggining of the game and when game is reset. 
     {
-        level += 1;
+        if (coinsCollected >= levelTotalCoins || coinsOverride == true)
+        {
+            level += 1;
 
-        if (gameCoins.TryGetValue(level, out testReturn))    // If there are more levels remaining update values and UI.
+            if (gameCoins.TryGetValue(level, out testReturn))    // If there are more levels remaining and CoinsOverride is not set then update values and UI.
+            {
+                levelTotalCoins = gameCoins[Level];
+                startXCordinantes = gameStartXCords[Level];
+                startZCordinantes = gameStartZCords[Level];
+                LevelDisplay();
+                CoinsDisplay(0);
+            }
+            else                                          // Else display a victory message.
+            {
+                WinDisplay();
+            }
+
+            return true;
+        } else
         {
-            levelTotalCoins = gameCoins[Level];
-            startXCordinantes = gameStartXCords[Level];
-            startZCordinantes = gameStartZCords[Level];
-            LevelDisplay();
-            CoinsDisplay(0);
-        } else                                          // Else display a victory message.
-        {
-            WinDisplay();
+            Debug.Log("Need more coins.");
+            return false;
         }
     }
 
     public void ResetLevel()    // Returns the Player to level one.  **TODO: Totally reset the world. Respawn all enemies and coins.
     {
         level = 0;
-        LevelDisplay();
+        coinsOverride = true;   // Only used because coins do not respawn after the player is reset.
+        NextLevel(0);
+    }
+
+    public void OverRideCoins()
+    {
         coinsOverride = true;
-        CoinsDisplay(gameCoins[level]);
     }
 
     private void LevelDisplay() // Updates all level UI for the level.
@@ -96,15 +110,21 @@ public class LevelController : MonoBehaviour
         }
     }
 
-    public void CoinsDisplay(int coinsCollected)    // Updates all level UI when coins collected.
+    public void CoinsDisplay(int coinsCollected)        // Updates all level UI when coins collected.
     {
-        if (levelTotalCoins > 0 && !coinsOverride)          // If coins are required to compleat the level and coins over ride is not on, let the user know.
+        if (coinsOverride)                             // Used to override the coins requirment.
+        {
+            for (int i = 0; i < coinsDisplayList.Length; i++)
+            {
+                coinsDisplayList[i].text = "COINS OVERRIDDEN";
+            }
+        } else if (levelTotalCoins > 0)                   // If coins are required to compleat the level and coins over ride is not on, let the user know.
         {
             for (int i = 0; i < coinsDisplayList.Length; i++)
             {
                 coinsDisplayList[i].text = "COINS: " + coinsCollected + "/" + levelTotalCoins;
             }
-        } else                                      // If coins are not required, display nothing.
+        } else                                          // If coins are not required, say so.
         {
             for (int i = 0; i < coinsDisplayList.Length; i++)
             {

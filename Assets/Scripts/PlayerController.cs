@@ -6,6 +6,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 using TMPro;
 
 public class PlayerController : MonoBehaviour
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
     private LevelController levelController;
     public TextMeshProUGUI[] failsDisplayList;
+    private FadeCanvas fadeCanvas = null;
 
     private float forwardInput;
     private float sidewaysInput;
@@ -20,6 +22,10 @@ public class PlayerController : MonoBehaviour
     private int coinsCollected;
     private int fails;
 
+    private void Awake()
+    {
+        fadeCanvas = FindObjectOfType<FadeCanvas>();
+    }
 
     void Start()    // Initilization. (Gives access the the LevelController)
     {
@@ -40,28 +46,22 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("Finish"))     // When the player triggers the Finish marker they either have enough coins or do not have enough
+        if (other.CompareTag("Finish"))                             // When the player triggers the Finish marker they either have enough coins or do not have enough
         {
-            if (coinsCollected == levelController.LevelTotalCoins)  // If they have enough coins they NextLevel method is called, the values are updated and the player is sent to the spawn of the next level.
+            if (levelController.NextLevel(coinsCollected))          // If they have enough coins NexeLevel will return true, then the values are updated and the player is sent to the spawn of the next level.
             {
-                Debug.Log("Finished with level" + levelController.Level);
-                levelController.NextLevel();
                 coinsCollected = 0;
                 SendToStart();
             } else                                                  // Otherwise nothing happens until the player collects enough coins.
             {
-                Debug.Log("You need more coins.");
+                Debug.Log("You need more coins again.");
             }
-        }
-
-        else if (other.CompareTag("Coin"))  // If the player triggers a coin the coins count incresses and the coins disapears.
+        } else if (other.CompareTag("Coin"))                        // If the player triggers a coin the coins count incresses and the coins disapears.
         {
             coinsCollected += 1;
             levelController.CoinsDisplay(coinsCollected);
             Destroy(other.gameObject);
-        }
-
-        else if (other.CompareTag("Enemy"))   // When the player collides with an enemy they are sent to the start and fails are incremented
+        } else if (other.CompareTag("Enemy"))                       // When the player collides with an enemy they are sent to the start and fails are incremented
         {
             SendToStart();
             fails += 1;
@@ -72,7 +72,9 @@ public class PlayerController : MonoBehaviour
 
     private void SendToStart()      // Send the player to the start of the curent level which is specified in the LevelController class.
     {
+        fadeCanvas.QuickFadeIn();
         playerRb.transform.position = new Vector3(levelController.StartXCordinantes, transform.position.y, levelController.StartZCordinantes);
+        fadeCanvas.StartFadeOut();
     }
 
     private void FailsDisplay()     // Updates the Fails UI.
