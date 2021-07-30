@@ -1,6 +1,6 @@
 ﻿//  Levi Knight
-//  07-09-2021
-//  MidTerm Project
+//  07-30-2021
+//  Final Project
 //  "Worlds Hardest Game in 3D"
 
 using System.Collections;
@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
     private LevelController levelController;
     public TextMeshProUGUI[] failsDisplayList;
     private FadeCanvas fadeCanvas = null;
+    private PlayQuickSound playQuickSound;
+    private PlayAnotherQuickSound playAnotherQuickSound;
 
     private float forwardInput;
     private float sidewaysInput;
@@ -34,9 +36,12 @@ public class PlayerController : MonoBehaviour
         coinsCollected = 0;
         fails = 0;
         FailsDisplay();
+
+        playQuickSound = GetComponent<PlayQuickSound>();
+        playAnotherQuickSound = GetComponent<PlayAnotherQuickSound>();
     }
 
-    public void RestartLevel()
+    public void RestartLevel()      // Does not do a compleate restart but simply resets some of the game objects and variables.
     {
         SendToStart();
         fails = 0;
@@ -61,9 +66,11 @@ public class PlayerController : MonoBehaviour
             coinsCollected += 1;
             levelController.CoinsDisplay(coinsCollected);
             Destroy(other.gameObject);
+            playAnotherQuickSound.Play();
         } else if (other.CompareTag("Enemy"))                       // When the player collides with an enemy they are sent to the start and fails are incremented
         {
             SendToStart();
+            playQuickSound.Play();
             fails += 1;
             FailsDisplay();
         }

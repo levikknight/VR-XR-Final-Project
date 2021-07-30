@@ -11,9 +11,12 @@ ScriptsOnlyBuild:
     - MoveRightThenTurn
     - OnButtonPress
     - OnSceneLoad
+    - PlayAnotherQuickSound
     - PlayQuickSound
     - PlayerController
+    - RemoveButton
     - SimpleCollectibleScript
+    - SpawnGun
     - TeleportAreaWithFade
     - ToggleRay
     Unity.InputSystem.dll:
@@ -61,6 +64,7 @@ ScriptsOnlyBuild:
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
     Unity.XR.Interaction.Toolkit.dll:
+    - UnityEngine.XR.Interaction.Toolkit.ActionBasedContinuousMoveProvider
     - UnityEngine.XR.Interaction.Toolkit.ActionBasedController
     - UnityEngine.XR.Interaction.Toolkit.ActionBasedSnapTurnProvider
     - UnityEngine.XR.Interaction.Toolkit.Inputs.InputActionManager
@@ -170,6 +174,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 606}
     - Class: 114
+      Script: {instanceID: 610}
+    - Class: 114
       Script: {instanceID: 1700}
     - Class: 114
       Script: {instanceID: 1702}
@@ -256,71 +262,77 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 5364}
     - Class: 114
-      Script: {instanceID: 5512}
+      Script: {instanceID: 5384}
     - Class: 114
       Script: {instanceID: 5514}
     - Class: 114
-      Script: {instanceID: 5534}
+      Script: {instanceID: 5516}
     - Class: 114
-      Script: {instanceID: 5790}
+      Script: {instanceID: 5536}
     - Class: 114
       Script: {instanceID: 5792}
     - Class: 114
-      Script: {instanceID: 5902}
+      Script: {instanceID: 5794}
     - Class: 114
-      Script: {instanceID: 6034}
+      Script: {instanceID: 5904}
     - Class: 114
-      Script: {instanceID: 6042}
+      Script: {instanceID: 6036}
     - Class: 114
-      Script: {instanceID: 6100}
+      Script: {instanceID: 6044}
     - Class: 114
-      Script: {instanceID: 6106}
+      Script: {instanceID: 6102}
     - Class: 114
-      Script: {instanceID: 6194}
+      Script: {instanceID: 6108}
     - Class: 114
-      Script: {instanceID: 6216}
+      Script: {instanceID: 6196}
     - Class: 114
-      Script: {instanceID: 6256}
+      Script: {instanceID: 6218}
     - Class: 114
-      Script: {instanceID: 6300}
+      Script: {instanceID: 6258}
     - Class: 114
-      Script: {instanceID: 6310}
+      Script: {instanceID: 6302}
     - Class: 114
-      Script: {instanceID: 6378}
+      Script: {instanceID: 6312}
     - Class: 114
-      Script: {instanceID: 6434}
+      Script: {instanceID: 6380}
     - Class: 114
-      Script: {instanceID: 6484}
+      Script: {instanceID: 6436}
     - Class: 114
-      Script: {instanceID: 6624}
+      Script: {instanceID: 6486}
     - Class: 114
-      Script: {instanceID: 6742}
+      Script: {instanceID: 6626}
     - Class: 114
-      Script: {instanceID: 6760}
+      Script: {instanceID: 6744}
     - Class: 114
-      Script: {instanceID: 6782}
+      Script: {instanceID: 6762}
     - Class: 114
-      Script: {instanceID: 6794}
+      Script: {instanceID: 6784}
     - Class: 114
-      Script: {instanceID: 6948}
+      Script: {instanceID: 6796}
     - Class: 114
-      Script: {instanceID: 7296}
+      Script: {instanceID: 6950}
     - Class: 114
-      Script: {instanceID: 7422}
+      Script: {instanceID: 7298}
     - Class: 114
-      Script: {instanceID: 7500}
+      Script: {instanceID: 7424}
     - Class: 114
-      Script: {instanceID: 7682}
+      Script: {instanceID: 7502}
     - Class: 114
-      Script: {instanceID: 7724}
+      Script: {instanceID: 7684}
     - Class: 114
-      Script: {instanceID: 7896}
+      Script: {instanceID: 7726}
     - Class: 114
-      Script: {instanceID: 7962}
+      Script: {instanceID: 7898}
     - Class: 114
-      Script: {instanceID: 8068}
+      Script: {instanceID: 7964}
     - Class: 114
-      Script: {instanceID: 57974}
+      Script: {instanceID: 8070}
+    - Class: 114
+      Script: {instanceID: 30562}
+    - Class: 114
+      Script: {instanceID: 63708}
+    - Class: 114
+      Script: {instanceID: 63716}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 120
@@ -1166,6 +1178,12 @@ ScriptsOnlyBuild:
     className: ToggleRay
   - hash:
       serializedVersion: 2
+      Hash: 8ef8c77cd90fb75173863254da642a13
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayQuickSound
+  - hash:
+      serializedVersion: 2
       Hash: 8d35f16c5022311c6f4d9432be73bfcf
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering.UI
@@ -1370,7 +1388,7 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: befb8fec3f9a9e98b35cf9bcd5f3ff61
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyController
@@ -1757,7 +1775,19 @@ ScriptsOnlyBuild:
       Hash: 8ef8c77cd90fb75173863254da642a13
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: PlayQuickSound
+    className: PlayAnotherQuickSound
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RemoveButton
+  - hash:
+      serializedVersion: 2
+      Hash: 2668df92975f2ba2d1cc0b81f0ef065e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SpawnGun
   platform: 13
   scenePathNames:
   - Assets/Scenes/WorldsHardestGame.unity

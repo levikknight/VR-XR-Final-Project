@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3443118589965527052}
   - component: {fileID: -1129226164859816047}
   - component: {fileID: -5239074770809699972}
+  - component: {fileID: -4801627337575504079}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -127,6 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffb0a2285d47e3940a034b52e21dca1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fullHealth: {fileID: 2100000, guid: 9475401e2410928439b4f3051eac1a30, type: 2}
+  halfHealth: {fileID: 2100000, guid: 27b0fd73200d0df45a690ad69ab070fc, type: 2}
+  lowHealth: {fileID: 2100000, guid: 878f30a01db157e4096168a5fecc4abe, type: 2}
 --- !u!82 &-1129226164859816047
 AudioSource:
   m_ObjectHideFlags: 0
@@ -148,7 +152,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 20
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -236,5 +240,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound: {fileID: 8300000, guid: 3a8730ed83cf54ec3af36761459c24e8, type: 3}
-  volume: 2
+  volume: 1
+  randomPitchVariance: 0
+--- !u!114 &-4801627337575504079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3382267309008432748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 649dd5cae2f43284981a1bdc9b6d2598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sound: {fileID: 8300000, guid: a6d54794b4ce94de1b7b1587af379192, type: 3}
+  volume: 1.5
   randomPitchVariance: 0

@@ -1,6 +1,6 @@
 ﻿//  Levi Knight
-//  07-09-2021
-//  MidTerm Project
+//  07-30-2021
+//  Final Project
 //  "Worlds Hardest Game in 3D"
 
 using System.Collections;
@@ -93,13 +93,14 @@ public class LevelController : MonoBehaviour
     public void ResetLevel()    // Returns the Player to level one.  **TODO: Totally reset the world. Respawn all enemies and coins.
     {
         level = 0;
-        coinsOverride = true;   // Only used because coins do not respawn after the player is reset.
+        coinsOverride = true;
         NextLevel(0);
     }
 
-    public void OverRideCoins()
+    public void OverRideCoins()     // When the button is pressed in game coins will not be required to compleate the levels.
     {
         coinsOverride = true;
+        CoinsDisplay(0);
     }
 
     private void LevelDisplay() // Updates all level UI for the level.
